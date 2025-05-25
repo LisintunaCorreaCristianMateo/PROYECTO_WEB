@@ -1,0 +1,101 @@
+<div class="container-fluid px-4">
+  <h1 class="mt-4">Inflación Mundial</h1>
+  <ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="index.html">Descripción</a></li>
+    <li class="breadcrumb-item active">Inflación</li>
+  </ol>
+
+  <div class="card mb-4">
+    <div class="card-body">
+      La inflación mundial es el aumento generalizado y sostenido de los precios a nivel global, influenciado 
+      por factores como la crisis energética, interrupciones en las cadenas de suministro, conflictos
+      geopolíticos y políticas monetarias expansivas. En los últimos años, eventos como la pandemia
+      de COVID-19 y la guerra entre Rusia y Ucrania han intensificado estas presiones inflacionarias, 
+      afectando tanto a países desarrollados como emergentes.
+    </div>
+  </div>
+
+  <!-- Rango de fechas -->
+  <div class="row mb-4">
+    <div class="col-md-3">
+      <label for="startDate" class="form-label">Desde:</label>
+      <input type="month" id="startDate" class="form-control" value="2023-01" />
+    </div>
+    <div class="col-md-3">
+      <label for="endDate" class="form-label">Hasta:</label>
+      <input type="month" id="endDate" class="form-control" value="2024-01" />
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <i class="fas fa-chart-line me-1"></i>
+      Inflación por País
+    </div>
+    <div class="card-body">
+      <table id="inflationTable" class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>País</th>
+            <th>Inflación (%)</th>
+            <th>Periodo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><img src="https://flagcdn.com/w20/ru.png" alt="Russia" width="20" height="15" class="me-2"> Russia</td>
+            <td>4.5</td>
+            <td>Ene 2023 – Ene 2024</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><img src="https://flagcdn.com/w20/fr.png" alt="France" width="20" height="15" class="me-2"> France</td>
+            <td>4.1</td>
+            <td>Ene 2023 – Ene 2024</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><img src="https://flagcdn.com/w20/de.png" alt="Germany" width="20" height="15" class="me-2"> Germany</td>
+            <td>3.8</td>
+            <td>Ene 2023 – Ene 2024</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><img src="https://flagcdn.com/w20/pt.png" alt="Portugal" width="20" height="15" class="me-2"> Portugal</td>
+            <td>2.7</td>
+            <td>Ene 2023 – Ene 2024</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><img src="https://flagcdn.com/w20/ca.png" alt="Canada" width="20" height="15" class="me-2"> Canada</td>
+            <td>3.3</td>
+            <td>Ene 2023 – Ene 2024</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><img src="https://flagcdn.com/w20/vn.png" alt="Vietnam" width="20" height="15" class="me-2"> Vietnam</td>
+            <td>3.9</td>
+            <td>Ene 2023 – Ene 2024</td>
+          </tr>
+          <!-- Nueva fila para Ecuador -->
+          <tr>
+            <td>7</td>
+            <td><img src="https://flagcdn.com/w20/ec.png" alt="Ecuador" width="20" height="15" class="me-2"> Ecuador</td>
+            <td>3.4</td>
+            <td>Ene 2023 – Ene 2024</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    $('#inflationTable').DataTable({
+      // aquí puedes gestionar filtros por fechas usando los inputs #startDate y #endDate
+    });
+  });
+</script>
