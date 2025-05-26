@@ -1,266 +1,315 @@
-<!-- Page Content-->
-<h1>Descripción</h1>
+<style>
+  /* Estilos generales */
+  .registration-guide, 
+  .evaluation-process,
+  .program-duration-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+  }
+
+  /* Estilos para encabezados */
+  .guide-header,
+  .process-header,
+  .card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .header-icon,
+  .card-icon {
+    font-size: 2.5rem;
+    color: #4e73df;
+    margin-bottom: 1rem;
+  }
+
+  .guide-title,
+  .process-title,
+  .card-title {
+    color: #2e3a4e;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .header-divider,
+  .card-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #4e73df 0%, #a855f7 100%);
+    margin: 0 auto 1.5rem;
+    border-radius: 3px;
+  }
+
+  /* Estilos para pasos y contenido */
+  .steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .step-number {
+    background: #4e73df;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .step-content {
+    flex: 1;
+  }
+
+  .step-title {
+    color: #2e3a4e;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .step-description,
+  .step-details,
+  .card-text {
+    color: #5a6a85;
+    line-height: 1.6;
+  }
+
+  .step-details {
+    padding-left: 1.5rem;
+    list-style: none;
+  }
+
+  .step-details li {
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  .step-details li i {
+    color: #4e73df;
+    position: absolute;
+    left: -1.5rem;
+    top: 5px;
+  }
+
+  /* Estilos para componentes de evaluación */
+  .evaluation-components {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .component {
+    background: #f0f7ff;
+    padding: 0.8rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .component i {
+    color: #4e73df;
+    font-size: 1.1rem;
+  }
+
+  /* Estilos para pie de página */
+  .guide-footer,
+  .process-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+  }
+
+  .assistance-text {
+    color: #5a6a85;
+    font-size: 0.9rem;
+  }
+
+  .assistance-text i {
+    color: #4e73df;
+    margin-right: 0.5rem;
+  }
+
+  /* Estilos para la tarjeta de duración */
+  .duration-highlight {
+    font-size: 1.2rem;
+    color: #4e73df;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .duration-features {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .duration-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .duration-features li:last-child {
+    border-bottom: none;
+  }
+</style>
+
 <div class="container-fluid px-5">
-  <!-- Heading Row-->
+  <!-- Sección principal -->
   <div class="row gx-4 gx-lg-5 align-items-center my-2">
     <div class="col-lg-5">
-      <img
-        class="img-fluid rounded mb-1 mb-lg-0"
-        width="400"
-        height="400"
-        src="../img/fotoEcuador.jpg"
-        alt="..."
-      />
+      <img class="img-fluid rounded mb-1 mb-lg-0" width="400" height="400" src="../img/imgEnglish.jpg" alt="LinguaSpark Academy" />
     </div>
     <div class="col-lg-7">
-      <h1 class="font-weight-light">Conoce a Ecuador</h1>
+      <h1 class="font-weight-light">LinguaSpark Academy</h1>
       <hr />
       <p>
-        Ecuador es un país ubicado en la región noroccidental de América del
-        Sur, conocido por su diversidad geográfica que incluye la región andina,
-        la costa del Pacífico, la Amazonía y las Islas Galápagos. Su economía se
-        basa principalmente en la exportación de petróleo, banano, camarón,
-        flores y cacao, además de un importante sector de servicios. Desde el
-        año 2000, Ecuador utiliza el dólar estadounidense como moneda oficial.
+        LinguaSpark Academy es un instituto de inglés innovador diseñado para transformar el aprendizaje del idioma en
+        una experiencia dinámica y efectiva.
       </p>
-      <!-- Modifica el botón para que active el modal -->
-      <a
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#ecuadorModal"
-        href="#!"
-        >Conoce más</a
-      >
+      <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ecuadorModal" href="#!">Conoce más</a>
+    </div>
+  </div>
 
-      <!-- Agrega el modal al final del container -->
-      <div
-        class="modal fade"
-        id="ecuadorModal"
-        tabindex="-1"
-        aria-labelledby="ecuadorModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="ecuadorModalLabel">
-                Descubre Ecuador
-              </h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <h6>Geografía y Clima</h6>
-              <p>Ecuador se divide en cuatro regiones geográficas:</p>
-              <ul>
-                <li>
-                  <strong>Costa:</strong> Región tropical con hermosas playas y
-                  manglares.
-                </li>
-                <li>
-                  <strong>Sierra:</strong> Cordillera de los Andes con volcanes
-                  activos y nevados.
-                </li>
-                <li>
-                  <strong>Amazonía:</strong> Selva tropical con inmensa
-                  biodiversidad.
-                </li>
-                <li>
-                  <strong>Galápagos:</strong> Islas volcánicas con especies
-                  únicas en el mundo.
-                </li>
-              </ul>
+   <!-- Call to Action-->
+  <div class="card text-white bg-secondary my-5 py-4 text-center">
+    <div class="card-body">
+      <p class="text-white m-0">
+      <p>Este sitio web está diseñado para brindar información actualizada y precisa sobre las principales métricas
+        académicas de LinguaSpark Academy. A continuación se presenta un resumen de nuestros indicadores clave:</p>
+      </p>
+    </div>
+  </div>
 
-              <h6>Cultura y Tradiciones</h6>
-              <p>
-                Ecuador es un país multiétnico y multicultural, hogar de
-                numerosas comunidades indígenas, así como población mestiza,
-                afroecuatoriana y más. Sus festivales, gastronomía y artesanías
-                son reconocidos mundialmente.
+  <!-- Tarjetas de información -->
+  <div class="row gx-4 gx-lg-5">
+    <!-- Tarjeta de Registro -->
+    <div class="col-md-4 mb-5">
+      <div class="registration-guide">
+        <div class="guide-header">
+          <i class="fas fa-user-graduate header-icon"></i>
+          <h2 class="guide-title">Cómo registrarse</h2>
+          <div class="header-divider"></div>
+        </div>
+        <div class="steps-container">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3 class="step-title">Acceso a Matrículas</h3>
+              <p class="step-description">
+                Encuentre la sección "Matrículas" en nuestro menú principal.
               </p>
-
-              <h6>Economía</h6>
-              <p>Las principales actividades económicas incluyen:</p>
-              <ul>
-                <li>Exportación de petróleo</li>
-                <li>Producción de banano, camarón y flores</li>
-                <li>Turismo</li>
-                <li>Remesas de trabajadores en el exterior</li>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3 class="step-title">Registro del Alumno</h3>
+              <ul class="step-details">
+                <li><i class="fas fa-check-circle"></i> Complete todos los campos</li>
+                <li><i class="fas fa-check-circle"></i> Adjunte documentos</li>
               </ul>
             </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Cerrar
-              </button>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3 class="step-title">Datos del Representante</h3>
+              <p class="step-description">
+                Solo para menores de edad.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Call to Action-->
-  <div class="card text-white bg-secondary my-5 py-4 text-center">
-    <div class="card-body">
-      <p class="text-white m-0">
-        <b>Bienvenido al Portal de Indicadores Económicos</b>, este sitio web
-        está diseñado para brindar información actualizada y precisa sobre las
-        principales características económicas del Ecuador.A continuacion se presentan
-        un resumen de los indicadores en la actualiad.
-      </p>
-    </div>
-  </div>
-  <!-- Content Row-->
-<div class="row gx-4 gx-lg-5">
-  <!-- Tarjeta PIB -->
-  <div class="col-md-4 mb-5">
-    <div class="card h-100">
-      <div class="card-body">
-        <h2 class="card-title">Pib</h2>
-        <p class="card-text">
-          El PIB nominal ecuatoriano ronda los US$120 mil millones, con
-          crecimiento real moderado o negativo. La combinación de factores
-          –especialmente la crisis energética y ajustes fiscales– explica por
-          qué el crecimiento se redujo drásticamente en 2024. Para 2025 se
-          proyecta una ligera recuperación entre +1,6% y +1,9% según FMI y BM
-        </p>
-      </div>
-      <div class="card-footer">
-        <!-- Botón que abre el modal de confirmación -->
-        <button 
-          class="btn btn-primary btn-sm" 
-          data-bs-toggle="modal" 
-          data-bs-target="#pibModal">
-          Ver fuente
-        </button>
-      </div>
-    </div>
-  </div>
 
-  <!-- Tarjeta Inflación -->
-  <div class="col-md-4 mb-5">
-    <div class="card h-100">
-      <div class="card-body">
-        <h2 class="card-title">Inflacion</h2>
-        <p class="card-text">
-          En abril de 2025, la inflación anual fue de -0,69%, la primera cifra
-          negativa desde la pandemia. Esta caída de precios se debe a una
-          combinación de menor consumo, promociones agresivas, subsidios en
-          electricidad y reducción temporal del IVA en turismo.
-        </p>
-      </div>
-      <div class="card-footer">
-        <button 
-          class="btn btn-primary btn-sm" 
-          data-bs-toggle="modal" 
-          data-bs-target="#inflacionModal">
-          Ver fuente
-        </button>
+    <!-- Tarjeta de Evaluación -->
+    <div class="col-md-4 mb-5">
+      <div class="evaluation-process">
+        <div class="process-header">
+          <i class="fas fa-clipboard-check header-icon"></i>
+          <h2 class="process-title">Proceso de Evaluación</h2>
+          <div class="header-divider"></div>
+        </div>
+        <div class="steps-container">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3 class="step-title">Programación</h3>
+              <ul class="step-details">
+                <li><i class="fas fa-check-circle"></i> Según tu progreso</li>
+                <li><i class="fas fa-check-circle"></i> Notificaciones automáticas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Tarjeta Riesgo País -->
-  <div class="col-md-4 mb-5">
-    <div class="card h-100">
-      <div class="card-body">
-        <h2 class="card-title">Riesgo Pais</h2>
-        <p class="card-text">
-          Febrero de 2025: El 5 de febrero, el riesgo país se ubicó en 912 puntos,  
-          rompiendo la barrera de los 1.000 puntos por primera vez en años.  
-          Abril de 2025: Sin embargo, el 8 de abril, el indicador volvió a subir, 
-          situándose en 1.840 puntos, debido a factores como incertidumbre política y económica.
-        </p>
-      </div>
-      <div class="card-footer">
-        <button 
-          class="btn btn-primary btn-sm" 
-          data-bs-toggle="modal" 
-          data-bs-target="#riesgoModal">
-          Ver fuente
-        </button>
+    <!-- Tarjeta de Duración del Programa (antes Riesgo País) -->
+    <div class="col-md-4 mb-5">
+      <div class="program-duration-card">
+        <div class="card-header">
+          <i class="fas fa-calendar-alt card-icon"></i>
+          <h2 class="card-title">Duración del Programa</h2>
+          <div class="card-divider"></div>
+        </div>
+        <div class="duration-highlight">
+          Clases durante 4 meses
+        </div>
+        <ul class="duration-features">
+          <li><i class="fas fa-check text-success"></i> 16 semanas académicas</li>
+          <li><i class="fas fa-check text-success"></i> 3 horas por semana</li>
+          <li><i class="fas fa-check text-success"></i> Total: 48 horas lectivas</li>
+          <li><i class="fas fa-check text-success"></i> Horarios flexibles</li>
+        </ul>
+        <div class="guide-footer">
+          <p class="assistance-text">
+            <i class="fas fa-info-circle"></i> Incluye material didáctico
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal PIB -->
-<div class="modal fade" id="pibModal" tabindex="-1" aria-labelledby="pibModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<!-- Modal -->
+<div class="modal fade" id="ecuadorModal" tabindex="-1" aria-labelledby="ecuadorModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="pibModalLabel">Advertencia – Fuente Externa</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <h5 class="modal-title" id="ecuadorModalLabel">LinguaSpark Academy</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Estás a punto de salir hacia bancomundial.org. ¿Deseas continuar?
+        <h6>Método Innovador</h6>
+        <p>Nuestro enfoque único en la enseñanza del inglés:</p>
+        <ul class="step-details">
+          <li><i class="fas fa-check-circle"></i> Inmersión Activa</li>
+          <li><i class="fas fa-check-circle"></i> Tecnología Integrada</li>
+          <li><i class="fas fa-check-circle"></i> Clases Personalizadas</li>
+        </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <a 
-          href="https://www.bancomundial.org/es/country/ecuador/overview#:~:text=La%20actividad%20econ%C3%B3mica%20experiment%C3%B3%20una,En%20este%20contexto%2C%20los=" 
-          target="_blank" 
-          class="btn btn-primary">
-          Continuar
-        </a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
-</div>
-
-<!-- Modal Inflación -->
-<div class="modal fade" id="inflacionModal" tabindex="-1" aria-labelledby="inflacionModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="inflacionModalLabel">Advertencia – Fuente Externa</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body">
-        Estás a punto de salir hacia La Hora. ¿Deseas continuar?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <a 
-          href="https://www.lahora.com.ec/pais/ecuador-registro-inflacion-negativa-abril-de-2025-luz-alimentos-tecnologia-bajaron-precio-menor-consumo-subsidios/?utm_source=chatgpt.com" 
-          target="_blank" 
-          class="btn btn-primary">
-          Continuar
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Riesgo País -->
-<div class="modal fade" id="riesgoModal" tabindex="-1" aria-labelledby="riesgoModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="riesgoModalLabel">Advertencia – Fuente Externa</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body">
-        Estás a punto de salir hacia El Universo. ¿Deseas continuar?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <a 
-          href="https://www.eluniverso.com/noticias/economia/riesgo-pais-economia-ecuador-2025-nota/?utm_source=chatgpt.com" 
-          target="_blank" 
-          class="btn btn-primary">
-          Continuar
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
 </div>

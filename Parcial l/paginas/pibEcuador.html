@@ -1,37 +1,119 @@
+<style>
+    .form-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Producto Interno Bruto</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Descripcion</a></li>
-                            <li class="breadcrumb-item active">Charts</li>
-                        </ol>
-                        <div class="card  bg-warning my-5 py-4 text-center">
-                            <div class="card-body">
-                        El Producto Interno Bruto (PIB) es el indicador económico que mide el valor total de
-                        
-                        los bienes y servicios producidos dentro de Ecuador en un periodo determinado, 
-                        generalmente un año. Refleja la capacidad productiva del país y su nivel de actividad 
-                        económica. A través de su evolución, se puede analizar el crecimiento o la contracción
-                         de la economía ecuatoriana a lo largo del tiempo. En el siguiente gráfico se presenta 
-                         la variación del PIB de Ecuador durante los últimos años, mostrando las tendencias y 
-                         cambios que han marcado el desarrollo económico del país.                                .
+    .header-icon {
+        color: #4e73df;
+    }
+</style>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="form-section p-4 p-md-5">
+                <!-- Encabezado -->
+                <div class="text-center mb-4">
+                    <i class="fas fa-user-graduate header-icon fa-3x mb-3"></i>
+                    <h2>Registro de Nuevo Alumno</h2>
+                    <p class="text-muted">Complete todos los campos obligatorios (*)</p>
+                </div>
+
+                <!-- Formulario -->
+                <form action="#" method="get" >
+                    <!-- Sección 1: Información Personal -->
+                    <div class="mb-4">
+                        <h5 class="border-bottom pb-2"></i>Datos Personales</h5>
+                        <div class="row g-3 mt-2">
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label">Nombres *</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                <div class="invalid-feedback">Por favor ingrese sus nombres.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="apellido" class="form-label">Apellidos *</label>
+                                <input type="text" class="form-control" id="apellido" name="apellido" required>
+                                <div class="invalid-feedback">Por favor ingrese sus apellidos.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cedula" class="form-label">Cédula/Pasaporte *</label>
+                                <input type="text" class="form-control" id="cedula" name="cedula" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento *</label>
+                                <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
+                                    required>
                             </div>
                         </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-chart-area me-1"></i>
-                                 Ejemplo de gráfico de área
-                            </div>
-                            <div class="card-body"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
-                            <div class="card-footer small text-muted">Actualizado hasta diciembre del 2024
-
                     </div>
-               
 
+                    <!-- Sección 2: Contacto -->
+                    <div class="mb-4">
+                        <h5 class="border-bottom pb-2"></i>Información de Contacto
+                        </h5>
+                        <div class="row g-3 mt-2">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">Ingrese un email válido.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label">Teléfono *</label>
+                                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="direccion" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" id="direccion" name="direccion">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección 3: Información Académica -->
+                    <div class="mb-4">
+                        <h5 class="border-bottom pb-2">Datos Académicos</h5>
+                        <div class="row g-3 mt-2">
+                            <div class="col-md-6">
+                                <label for="nivel" class="form-label">Nivel de Inglés *</label>
+                                <select class="form-select" id="nivel" name="nivel" required>
+                                    <option value="" selected disabled>Seleccione...</option>
+                                    <option value="A1">Principiante (A1)</option>
+                                    <option value="A2">Básico (A2)</option>
+                                    <option value="B1">Intermedio (B1)</option>
+                                    <option value="B2">Intermedio Alto (B2)</option>
+                                    <option value="C1">Avanzado (C1)</option>
+                                    <option value="C2">Experto (C2)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="horario" class="form-label">Horario Preferido *</label>
+                                <select class="form-select" id="horario" name="horario" required>
+                                    <option value="" selected disabled>Seleccione...</option>
+                                    <option value="manana">Mañana (8:00-12:00)</option>
+                                    <option value="tarde">Tarde (14:00-18:00)</option>
+                                    <option value="noche">Noche (19:00-21:00)</option>
+                                    <option value="sabado">Sábados (9:00-13:00)</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="comentarios" class="form-label">Comentarios Adicionales</label>
+                                <textarea class="form-control" id="comentarios" name="comentarios" rows="2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <button type="reset" class="btn btn-outline-secondary me-md-2">
+                         Limpiar
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                        Enviar Registro
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
-<!-- Scripts necesarios -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<!-- Al final del archivo, antes de cerrar el body -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    </div>
+</div>
