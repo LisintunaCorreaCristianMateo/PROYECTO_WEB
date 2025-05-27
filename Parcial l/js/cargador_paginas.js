@@ -8,6 +8,7 @@ fetch("footer.html")
 
 
 
+
 // ...existing code...
 
 function cargarPaginas(url_pagina) {
@@ -28,6 +29,7 @@ function cargarPaginas(url_pagina) {
             }
         });
 }
+
 
 // Función para inicializar las gráficas
 function initCharts() {

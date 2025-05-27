@@ -12,7 +12,7 @@ function validateLogin(event) {
 
     if (email === userData.email && password === userData.password) {
         alert('Login exitoso!');
-        window.location.href = 'index.html';
+        window.location.href = 'index.html'; // Redirigir a la página principal
     } else {
         alert('Email o contraseña incorrectos');
     }
