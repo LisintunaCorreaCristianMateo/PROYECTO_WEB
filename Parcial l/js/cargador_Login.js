@@ -13,8 +13,12 @@ function cargarPaginasLogin(url_pagina) {
             // Reemplazar rutas relativas con rutas absolutas
             const contenidoModificado = data.replace(/src="\.\.\/img\//g, 'src="./img/');
             document.getElementById('principal').innerHTML = contenidoModificado;
-
+            
+            // Activar la cámara si estamos en la página de crear perfil
+            if (url_pagina === "crearPerfil" && typeof window.activarCamara === 'function') {
+                window.activarCamara();
+            }
         });
 }
-window.onload = () => cargarPaginasLogin("IndexPrincipal");
 
+window.onload = () => cargarPaginasLogin("IndexPrincipal");
