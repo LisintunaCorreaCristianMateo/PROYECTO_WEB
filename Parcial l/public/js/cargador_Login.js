@@ -14,18 +14,29 @@ function cargarPaginasLogin(url_pagina) {
             const contenidoModificado = data.replace(/src="\.\.\/img\//g, 'src="./img/');
             document.getElementById('principal').innerHTML = contenidoModificado;
             
-            // Activar la cámara si estamos en la página de crear perfil
+            // Cargar scripts específicos después de cargar el contenido
             if (url_pagina === "crearPerfil") {
+                const script = document.createElement('script');
+                script.src = './js/crearPerfil.js';
+                document.body.appendChild(script);
+                
                 if (typeof window.activarCamara === 'function') {
                     window.activarCamara();
                 }
                 
-                // Añadir evento al botón de geolocalización para evitar usar onclick
                 const btnGeolocalizar = document.getElementById('btn_geolocalizar');
                 if (btnGeolocalizar && typeof window.obtenerUbicacion === 'function') {
                     btnGeolocalizar.addEventListener('click', window.obtenerUbicacion);
                 }
             }
+            else if (url_pagina === "verPerfil") {
+                const script = document.createElement('script');
+                script.src = './js/cargar_datos.js';
+                document.body.appendChild(script);
+            }
+        })
+        .catch(error => {
+            console.error('Error al cargar la página:', error);
         });
 }
 

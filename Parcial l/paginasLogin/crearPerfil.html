@@ -84,14 +84,12 @@
                         <div class="container py-5">
                             <label for="">Ubicación</label>
                             <br><br>
-                     
 
-                            <button type="button" class="btn btn-primary" id="btn_geolocalizar"
-                            >
-                        Acceder a tu Ubicación
-                        </button>
+                            <button type="button" class="btn btn-primary" onclick="obtenerUbicacion()">
+                                Acceder a tu Ubicación
+                            </button>
 
-                           <br><br>
+                            <br><br>
 
 
                             <label for="latitud">Latitud:</label>
@@ -169,9 +167,10 @@
                             <button type="reset" class="btn btn-outline-secondary me-md-2">
                                 Limpiar
                             </button>
-                            <button type="submit" class="btn btn-primary">
+                            <button type="button" onclick="guardar_Datos()" class="btn btn-primary">
                                 Enviar Registro
                             </button>
+
                         </div>
                 </form>
             </div>
@@ -182,3 +181,4 @@
 
 <script src="../js/foto.js"></script>
 <script src="../js/geolocation.js"></script>
+<script src="../js/guardar_datos.js"></script>

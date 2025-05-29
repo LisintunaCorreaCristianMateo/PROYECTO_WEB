@@ -19,20 +19,16 @@ function inicializarCamara() {
             console.log("Error accediendo a la cámara:", error);
         });
 }
-
-// Verificar cuando el contenido dinámico se ha cargado
 document.addEventListener('DOMContentLoaded', function() {
-    // Observador de mutaciones para detectar cuando se añade el elemento de video
-    const observer = new MutationObserver(function(mutations) {
-        if (document.getElementById("my_camara")) {
-            inicializarCamara();
-        }
-    });
+    // Inicializar cámara si el elemento existe
+    if (document.getElementById("my_camara")) {
+        inicializarCamara();
+    }
     
-    // Observar los cambios en el elemento principal donde se carga el contenido dinámico
-    const targetNode = document.getElementById("principal");
-    if (targetNode) {
-        observer.observe(targetNode, { childList: true, subtree: true });
+    // Configurar el botón de tomar foto
+    const btnCapturar = document.getElementById("btn_capturar");
+    if (btnCapturar) {
+        btnCapturar.addEventListener('click', tomarFoto);
     }
 });
 

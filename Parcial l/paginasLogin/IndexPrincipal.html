@@ -1,60 +1,266 @@
+<style>
+  /* Estilos generales */
+  .registration-guide, 
+  .evaluation-process,
+  .program-duration-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+  }
 
-    <!-- Masthead-->
-    <header class="masthead">
-      <div class="container">
-        <div class="masthead-subheading">¡Bienvenido a nuestra plataforma de inglés!</div>
-        <div class="masthead-heading text-uppercase">Abre las puertas al mundo</div>
-        <a class="btn btn-primary btn-xl text-uppercase" href="#services"
-          >Conoce más</a
-        >
+  /* Estilos para encabezados */
+  .guide-header,
+  .process-header,
+  .card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .header-icon,
+  .card-icon {
+    font-size: 2.5rem;
+    color: #4e73df;
+    margin-bottom: 1rem;
+  }
+
+  .guide-title,
+  .process-title,
+  .card-title {
+    color: #2e3a4e;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .header-divider,
+  .card-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #4e73df 0%, #a855f7 100%);
+    margin: 0 auto 1.5rem;
+    border-radius: 3px;
+  }
+
+  /* Estilos para pasos y contenido */
+  .steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .step-number {
+    background: #4e73df;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .step-content {
+    flex: 1;
+  }
+
+  .step-title {
+    color: #2e3a4e;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .step-description,
+  .step-details,
+  .card-text {
+    color: #5a6a85;
+    line-height: 1.6;
+  }
+
+  .step-details {
+    padding-left: 1.5rem;
+    list-style: none;
+  }
+
+  .step-details li {
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  .step-details li i {
+    color: #4e73df;
+    position: absolute;
+    left: -1.5rem;
+    top: 5px;
+  }
+
+  .evaluation-components {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .component {
+    background: #f0f7ff;
+    padding: 0.8rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .component i {
+    color: #4e73df;
+    font-size: 1.1rem;
+  }
+
+  /* Estilos para pie de página */
+  .guide-footer,
+  .process-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+  }
+
+  .assistance-text {
+    color: #5a6a85;
+    font-size: 0.9rem;
+  }
+
+  .assistance-text i {
+    color: #4e73df;
+    margin-right: 0.5rem;
+  }
+
+  /* Estilos para la tarjeta de duración */
+  .duration-highlight {
+    font-size: 1.2rem;
+    color: #4e73df;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .duration-features {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .duration-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .duration-features li:last-child {
+    border-bottom: none;
+  }
+</style>
+
+
+<!-- Masthead-->
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-subheading">¡Bienvenido a nuestra plataforma de inglés!</div>
+    <div class="masthead-heading text-uppercase">Abre las puertas al mundo</div>
+    <a class="btn btn-primary btn-xl text-uppercase" href="#services">Conoce más</a>
+  </div>
+</header>
+<!-- Services-->
+<!-- Tarjetas de información -->
+<div class="row gx-4 gx-lg-5">
+  <!-- Tarjeta de Registro -->
+  <div class="col-md-4 mb-5">
+    <div class="registration-guide">
+      <div class="guide-header">
+        <i class="fas fa-user-graduate header-icon"></i>
+        <h2 class="guide-title">Cómo registrarse</h2>
+        <div class="header-divider"></div>
       </div>
-    </header>
-    <!-- Services-->
-    <section class="page-section" id="services">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="section-heading text-uppercase">Services</h2>
-          <h3 class="section-subheading text-muted">
-            Lorem ipsum dolor sit amet consectetur.
-          </h3>
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title">Menu superior</h3>
+            <p class="step-description">
+              Dirigase al menu que se encuentra en la parte superior derecha y seleccione crear perfil.
+            </p>
+          </div>
         </div>
-        <div class="row text-center">
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="my-3">E-Commerce</h4>
-            <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-              maxime quam architecto quo inventore harum ex magni, dicta
-              impedit.
-            </p>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="step-title">Crear Perfil</h3>
+            <ul class="step-details">
+              <li><i class="fas fa-check-circle"></i> Complete todos los campos</li>
+              <li><i class="fas fa-check-circle"></i> Adjunte documentos</li>
+            </ul>
           </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="my-3">Responsive Design</h4>
-            <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-              maxime quam architecto quo inventore harum ex magni, dicta
-              impedit.
-            </p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="my-3">Web Security</h4>
-            <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-              maxime quam architecto quo inventore harum ex magni, dicta
-              impedit.
-            </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarjeta de Evaluación -->
+  <div class="col-md-4 mb-5">
+    <div class="evaluation-process">
+      <div class="process-header">
+        <i class="fas fa-clipboard-check header-icon"></i>
+        <h2 class="process-title">Proceso de Evaluación</h2>
+        <div class="header-divider"></div>
+      </div>
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title">Programación</h3>
+            <ul class="step-details">
+              <li><i class="fas fa-check-circle"></i> Según tu progreso</li>
+              <li><i class="fas fa-check-circle"></i> Notificaciones automáticas</li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+
+  <!-- Tarjeta de Duración del Programa (antes Riesgo País) -->
+  <div class="col-md-4 mb-5">
+    <div class="program-duration-card">
+      <div class="card-header">
+        <i class="fas fa-calendar-alt card-icon"></i>
+        <h2 class="card-title">Duración del Programa</h2>
+        <div class="card-divider"></div>
+      </div>
+      <div class="duration-highlight">
+        Clases durante 4 meses
+      </div>
+      <ul class="duration-features">
+        <li><i class="fas fa-check text-success"></i> 16 semanas académicas</li>
+        <li><i class="fas fa-check text-success"></i> 3 horas por semana</li>
+        <li><i class="fas fa-check text-success"></i> Total: 48 horas lectivas</li>
+        <li><i class="fas fa-check text-success"></i> Horarios flexibles</li>
+      </ul>
+      <div class="guide-footer">
+        <p class="assistance-text">
+          <i class="fas fa-info-circle"></i> Incluye material didáctico
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
