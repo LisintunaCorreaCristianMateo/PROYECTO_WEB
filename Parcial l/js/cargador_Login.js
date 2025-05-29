@@ -15,8 +15,16 @@ function cargarPaginasLogin(url_pagina) {
             document.getElementById('principal').innerHTML = contenidoModificado;
             
             // Activar la cámara si estamos en la página de crear perfil
-            if (url_pagina === "crearPerfil" && typeof window.activarCamara === 'function') {
-                window.activarCamara();
+            if (url_pagina === "crearPerfil") {
+                if (typeof window.activarCamara === 'function') {
+                    window.activarCamara();
+                }
+                
+                // Añadir evento al botón de geolocalización para evitar usar onclick
+                const btnGeolocalizar = document.getElementById('btn_geolocalizar');
+                if (btnGeolocalizar && typeof window.obtenerUbicacion === 'function') {
+                    btnGeolocalizar.addEventListener('click', window.obtenerUbicacion);
+                }
             }
         });
 }
