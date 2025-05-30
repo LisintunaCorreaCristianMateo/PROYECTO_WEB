@@ -46,16 +46,17 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="cedula" class="form-label">Cédula/Pasaporte *</label>
-                                <input type="text" class="form-control" id="cedula" name="cedula" required>
+                                <input type="text" class="form-control" id="cedula" name="cedula" required
+                                pattern="[0-9]{10}" maxlength="10" minlength="10">
                             </div>
                             <div class="col-md-6">
                                 <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento *</label>
                                 <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
+                                min="1975-05-30" max="2013-05-30"
                                     required>
                             </div>
                         </div>
 
-                        <!--foto-->
                         <br><br>
                         <label for="my_camara">Registra tu foto</label>
                         <div class="container py-5">
@@ -119,7 +120,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="telefono" class="form-label">Teléfono *</label>
-                                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono" required
+                                    pattern="[0-9]{10}" maxlength="10" minlength="10">
                                 </div>
                                 <div class="col-12">
                                     <label for="direccion" class="form-label">Dirección</label>
@@ -128,7 +130,6 @@
                             </div>
                         </div>
 
-                        <!-- Sección 3: Información Académica -->
                         <div class="mb-4">
                             <h5 class="border-bottom pb-2">Datos Académicos</h5>
                             <div class="row g-3 mt-2">
