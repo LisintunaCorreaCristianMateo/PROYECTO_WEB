@@ -1,16 +1,22 @@
 <style>
-  /* Estilos generales */
+  :root {
+    --primary-color: #0a0910;
+    --accent-color: #a855f7;
+    --text-color: #2e3a4e;
+    --muted-text: #5a6a85;
+    --bg-light: #f5f7fa;
+  }
+
   .registration-guide, 
   .evaluation-process,
   .program-duration-card {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #cdeaf1 0%, #ffffff 100%);
     border-radius: 12px;
     padding: 2rem;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     margin-bottom: 2rem;
   }
 
-  /* Estilos para encabezados */
   .guide-header,
   .process-header,
   .card-header {
@@ -21,14 +27,14 @@
   .header-icon,
   .card-icon {
     font-size: 2.5rem;
-    color: #4e73df;
+    color: var(--primary-color);
     margin-bottom: 1rem;
   }
 
   .guide-title,
   .process-title,
   .card-title {
-    color: #2e3a4e;
+    color: var(--text-color);
     font-weight: 600;
     margin-bottom: 1rem;
   }
@@ -37,12 +43,11 @@
   .card-divider {
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, #4e73df 0%, #a855f7 100%);
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     margin: 0 auto 1.5rem;
     border-radius: 3px;
   }
 
-  /* Estilos para pasos y contenido */
   .steps-container {
     display: flex;
     flex-direction: column;
@@ -56,7 +61,7 @@
   }
 
   .step-number {
-    background: #4e73df;
+    background: var(--primary-color);
     color: white;
     width: 32px;
     height: 32px;
@@ -74,7 +79,7 @@
   }
 
   .step-title {
-    color: #2e3a4e;
+    color: var(--text-color);
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -83,7 +88,7 @@
   .step-description,
   .step-details,
   .card-text {
-    color: #5a6a85;
+    color: var(--muted-text);
     line-height: 1.6;
   }
 
@@ -98,7 +103,7 @@
   }
 
   .step-details li i {
-    color: #4e73df;
+    color: var(--accent-color);
     position: absolute;
     left: -1.5rem;
     top: 5px;
@@ -112,7 +117,7 @@
   }
 
   .component {
-    background: #f0f7ff;
+    background: #edf1fa;
     padding: 0.8rem;
     border-radius: 8px;
     display: flex;
@@ -122,11 +127,10 @@
   }
 
   .component i {
-    color: #4e73df;
+    color: var(--primary-color);
     font-size: 1.1rem;
   }
 
-  /* Estilos para pie de página */
   .guide-footer,
   .process-footer {
     margin-top: 2rem;
@@ -136,19 +140,18 @@
   }
 
   .assistance-text {
-    color: #5a6a85;
+    color: var(--muted-text);
     font-size: 0.9rem;
   }
 
   .assistance-text i {
-    color: #4e73df;
+    color: var(--primary-color);
     margin-right: 0.5rem;
   }
 
-  /* Estilos para la tarjeta de duración */
   .duration-highlight {
     font-size: 1.2rem;
-    color: #4e73df;
+    color: var(--primary-color);
     font-weight: bold;
     text-align: center;
     margin: 1rem 0;
@@ -162,12 +165,21 @@
   .duration-features li {
     padding: 0.5rem 0;
     border-bottom: 1px solid #eee;
+    color: var(--text-color);
   }
 
   .duration-features li:last-child {
     border-bottom: none;
   }
+
+  .duration-features li i {
+    color: #28a745;
+    margin-right: 0.5rem;
+  }
 </style>
+
+<br><br>
+<br><br>
 
 
 <!-- Masthead-->
@@ -180,7 +192,8 @@
 </header>
 <!-- Services-->
 <!-- Tarjetas de información -->
-<div class="row gx-4 gx-lg-5">
+ <br><br><br>
+<div class="row gx-4 gx-lg-5" id="services">
   <!-- Tarjeta de Registro -->
   <div class="col-md-4 mb-5">
     <div class="registration-guide">

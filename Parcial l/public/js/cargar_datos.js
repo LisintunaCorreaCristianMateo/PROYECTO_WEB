@@ -2,7 +2,7 @@ function cargarDatosPerfil() {
     const datos = JSON.parse(localStorage.getItem("datosFormulario"));
 
     if (!datos) {
-        alert("No se encontraron datos guardados.");
+        console.warn("No se encontraron datos guardados.");
         return;
     }
 
@@ -24,6 +24,12 @@ function cargarDatosPerfil() {
         mapa: document.getElementById("profileMap")
     };
 
+    // Verificar si los elementos existen (para evitar errores en carga dinámica)
+    if (!elementos.nombre) {
+        // Los elementos no están presentes en el DOM actual
+        return false;
+    }
+
     // Asignar valores a los elementos existentes
     for (const key in elementos) {
         if (elementos[key] && datos[key]) {
@@ -39,9 +45,15 @@ function cargarDatosPerfil() {
     const lat = parseFloat(datos.latitud);
     const lng = parseFloat(datos.longitud);
 
-    if (!isNaN(lat) && !isNaN(lng)) {
+    if (!isNaN(lat) && !isNaN(lng) && elementos.mapa) {
         // Esperar a que Leaflet esté cargado
         if (typeof L !== 'undefined') {
+            // Comprobar si el mapa ya está inicializado
+            if (elementos.mapa._leaflet_id) {
+                elementos.mapa._leaflet = null;
+                elementos.mapa.innerHTML = '';
+            }
+            
             const map = L.map("profileMap").setView([lat, lng], 13);
             L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
                 attribution: "© OpenStreetMap contributors"
@@ -50,23 +62,41 @@ function cargarDatosPerfil() {
             L.marker([lat, lng]).addTo(map)
                 .bindPopup("Ubicación del alumno")
                 .openPopup();
+                
+            return true;
         } else {
             console.error("Leaflet no está cargado");
+            return false;
         }
     } else if (elementos.mapa) {
         elementos.mapa.textContent = "Coordenadas inválidas o no proporcionadas.";
+        return true;
     }
+    
+    return true;
 }
 
-// Esperar a que el DOM esté completamente cargado
-document.addEventListener("DOMContentLoaded", function() {
-    // Verificar si estamos en la página de perfil
+// Función para verificar y cargar el perfil
+function verificarYCargarPerfil() {
+    // Solo intentar cargar si estamos en la página del perfil
     if (document.getElementById("profileNombre")) {
         cargarDatosPerfil();
     }
-});
-
-// También ejecutar cuando se carga dinámicamente
-if (document.readyState === "complete" || document.readyState === "interactive") {
-    setTimeout(cargarDatosPerfil, 100);
 }
+
+// Función para ser llamada después de cargar contenido dinámico
+function cargarPerfilDinamico() {
+    // Usar un pequeño retraso para asegurar que el DOM esté actualizado
+    setTimeout(verificarYCargarPerfil, 100);
+}
+
+// Listener para cuando la página se carga inicialmente
+document.addEventListener("DOMContentLoaded", verificarYCargarPerfil);
+
+// Para contenido dinámico - llamar esta función cuando se cargue verPerfil.html
+if (document.readyState === "complete" || document.readyState === "interactive") {
+    verificarYCargarPerfil();
+}
+
+// Función para ser usada desde cargador_Login.js
+window.addEventListener("cargarPerfilEvent", verificarYCargarPerfil);

@@ -17,7 +17,7 @@ function cargarPaginasLogin(url_pagina) {
             // Cargar scripts específicos después de cargar el contenido
             if (url_pagina === "crearPerfil") {
                 const script = document.createElement('script');
-                script.src = './js/crearPerfil.js';
+                script.src = './public/js/crearPerfil.js';
                 document.body.appendChild(script);
                 
                 if (typeof window.activarCamara === 'function') {
@@ -30,9 +30,15 @@ function cargarPaginasLogin(url_pagina) {
                 }
             }
             else if (url_pagina === "verPerfil") {
-                const script = document.createElement('script');
-                script.src = './js/cargar_datos.js';
-                document.body.appendChild(script);
+                // No vuelvas a cargar el script, ya está en bienvenida.html
+                // En su lugar, dispara un evento para activar la carga de datos
+                if (typeof cargarPerfilDinamico === 'function') {
+                    cargarPerfilDinamico();
+                } else {
+                    // Si la función no está disponible, dispara un evento personalizado
+                    const evento = new Event('cargarPerfilEvent');
+                    window.dispatchEvent(evento);
+                }
             }
         })
         .catch(error => {
