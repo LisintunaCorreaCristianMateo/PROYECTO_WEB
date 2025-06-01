@@ -20,7 +20,7 @@ window.guardar_Datos = function () {
     // Validar campos obligatorios
     for (const campo in datos) {
         if (datos[campo] === "" && campo !== "direccion" && campo !== "comentarios") {
-            alert(`El campo ${campo} es obligatorio.`);
+            mostrarModal(`El campo ${campo} es obligatorio.`);
             return;
         }
     }
@@ -30,13 +30,13 @@ window.guardar_Datos = function () {
         console.log("Datos guardados en localStorage.");
     } catch (e) {
         console.error("Error al guardar en localStorage:", e);
-        alert("Ocurrió un error al guardar los datos.");
+        mostrarModal("Ocurrió un error al guardar los datos.");
         return;
     }
 
     console.log("Datos registrados:", datos);
 
-    alert("Datos registrados correctamente. Revisa la consola para ver los detalles.");
+    mostrarMensaje("Datos registrados correctamente.");
 };
 
 function obtenerImagenDesdeCanvas(idCanvas) {
@@ -47,4 +47,18 @@ function obtenerImagenDesdeCanvas(idCanvas) {
         console.error("Canvas no encontrado:", idCanvas);
         return "";
     }
+}
+
+function mostrarModal(mensaje) {
+    const modal = document.getElementById('alerta');
+    const mensajeElem = document.getElementById('alertaMessage');
+    mensajeElem.textContent = mensaje;
+    modal.style.display = 'flex';
+}
+
+function mostrarMensaje(mensaje1) {
+    const modal = document.getElementById('mensaje');
+    const mensajeElem = document.getElementById('mensajeContent');
+    mensajeElem.textContent = mensaje1;
+    modal.style.display = 'flex';
 }
